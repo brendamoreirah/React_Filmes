@@ -6,9 +6,8 @@ function App() {
   return (
     <>
     <CadastroFilme/>
-       {/* <Login>
-        
-       </Login> */}
+       {/* <Login> */}
+        {/* <chmar as telqw */}
     </>
   );
 }

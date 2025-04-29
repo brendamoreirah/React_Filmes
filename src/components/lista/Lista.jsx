@@ -2,10 +2,10 @@ import "./Lista.css";
 import Editar from "../../assets/img/pen-to-square-solid.svg";
 import Excluir from "../../assets/img/trash-can-regular.svg";
 
-const Lista = () => {
+const Lista = (props) => {
      return(
             <section className="layout_grid listagem">
-                <h1>Lista dos Filmes</h1>
+                <h1>{`Lista de ${props.tituloLista}`}</h1>
                 <hr/>
 
                 <div className="tabela">
@@ -15,7 +15,7 @@ const Lista = () => {
                             {/* tr => table row(tabela linha) */}
                             <tr className="table_cabecalho">
                                 <th>Nome</th>  
-                                <th>Genero</th>
+                                <th style={{display: props.visible}}>Genero</th>
                                 <th>Editar</th>
                                 <th>Excluir</th>
                             </tr>
@@ -24,17 +24,12 @@ const Lista = () => {
                         <tbody>
                             {/* tr é uma linha ta tabela */}
                             <tr className="item_lista">
-                                <td data-cell= "Nome">Harry Potter</td>
-                                <td data-cell= "Genero">Ação</td>
+                                <td data-cell= "Nome" style={{display: props.visible}}>Harry Potter</td>
+                                <td data-cell= "Genero"> Ação</td>
                                 <td data-cell= "Editar"><img src={Editar} alt="" /></td>
                                 <td data-cell= "Editar"><img src={Excluir} alt="" /></td>
                             </tr>
-                            <tr className="item_lista">
-                                <td data-cell= "Nome">Harry Potter</td>
-                                <td data-cell= "Genero">Ação</td>
-                                <td data-cell= "Editar"><img src={Editar} alt="" /></td>
-                                <td data-cell= "Editar"><img src={Excluir} alt="" /></td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>

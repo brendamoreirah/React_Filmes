@@ -33,30 +33,76 @@
     height: 30px;
 }
 
+.tabela{
+    width: 100%;
+    margin-top: 30px;
+}
+
 .tabela table{
     width: 100%;
+    border-collapse: collapse;
     /* margin-top serve para separar a parte de cima */
 
 }
 
 /* first-child => primeiro filho, seria a primeira informacao do th cabecalho que no caso seria nome */
 /* damos o .tabela porque essa classe chamada cabecalho ja esta definida no header, para nao dar confusao chamamos ele */
-.tabela .cabecalho :first-child{
+.tabela .table_cabecalho :first-child{
     width: 300px;
 }
 
 /* isso seria para voce pegar a segunda infprmacao, nth =>  um numero do filho do meu th*/
 /* damos o .tabela porque essa classe chamda cabecalho ja esta definida no header, para nao dar confusao chamamos ele */
-.tabela .cabecalho :nth-child(2){
+.tabela .table_cabecalho :nth-child(2){
     width: 200px;
 }
 
-.tabela .cabecalho th{
+.tabela .table_cabecalho th{
   /* damos o .tabela porque essa classe chamada cabecalho ja esta definida no header, para nao dar confusao chamamos ele */
     width: 100px;
 }
 
 .item_lista td{
     /* usamos isso para desgrudar o item do titulo */
-    padding: 20px 0 5px 0;
+    padding: 20px 0 10px 0;
+}
+
+.item_lista{
+    text-align: center;
+    border-bottom: solid 1px #73061B20;
+}
+
+
+@media screen and (max-width: 768px){
+    /* 1px - 768px */
+
+    /* um elemento abaixo do outro:  */
+    .tabela thead{
+        display: none;
+    }
+
+    .item_lista td{
+        display: grid;
+        text-align: left;
+        padding: 10px 10px 10px 0;
+        grid-template-columns: 10ch auto;
+
+    }
+
+    .item_lista td::before{
+        /* adiciona o data-cell do html e coloca os ":" depois */
+        content: attr(data-cell) ":";
+        font-weight: 700;
+        width: 80px;
+        text-align: left;
+    }
+
+
+    .item_lista td:last-child{
+        margin-bottom: 24px;
+    }
+
+    .item_lista td:first-child{
+        margin-top: 10px;
+    }
 }

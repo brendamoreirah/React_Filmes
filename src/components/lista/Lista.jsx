@@ -13,7 +13,7 @@ const Lista = () => {
                         {/* cabecalho da tabela, thead é a tag */}
                         <thead>
                             {/* tr => table row(tabela linha) */}
-                            <tr className="cabecalho">
+                            <tr className="table_cabecalho">
                                 <th>Nome</th>  
                                 <th>Genero</th>
                                 <th>Editar</th>
@@ -24,10 +24,16 @@ const Lista = () => {
                         <tbody>
                             {/* tr é uma linha ta tabela */}
                             <tr className="item_lista">
-                                <td>Velozes e Furiosos</td>
-                                <td>Ação</td>
-                                <td><img src={Editar} alt="" /></td>
-                                <td><img src={Excluir} alt="" /></td>
+                                <td data-cell= "Nome">Harry Potter</td>
+                                <td data-cell= "Genero">Ação</td>
+                                <td data-cell= "Editar"><img src={Editar} alt="" /></td>
+                                <td data-cell= "Editar"><img src={Excluir} alt="" /></td>
+                            </tr>
+                            <tr className="item_lista">
+                                <td data-cell= "Nome">Harry Potter</td>
+                                <td data-cell= "Genero">Ação</td>
+                                <td data-cell= "Editar"><img src={Editar} alt="" /></td>
+                                <td data-cell= "Editar"><img src={Excluir} alt="" /></td>
                             </tr>
                         </tbody>
                     </table>

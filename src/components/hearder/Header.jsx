@@ -10,8 +10,6 @@ const Header= () => {
             <Link to="/">
             <img src={Logo}alt="Logo do Filmoteca" />
             </Link>
-
-        
         
 
         <nav className="nav_header">

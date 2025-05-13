@@ -13,11 +13,11 @@ const Login = () => {
                  <div className="campos_login">
                 <div className="campo_input">
                     <label htmlFor="">Email:</label>
-                    <input type="email" name="email"  placeholder="Digite seu e-mail"/>
+                    <input type="email" name="email"  placeholder="Digite seu e-mail:"/>
                 </div>
                 <div className="campo_input">
                     <label htmlFor="">Senha:</label>
-                    <input type="password"  name="senha" placeholder="Digite sua senha"/>
+                    <input type="password"  name="senha" placeholder="Digite sua senha:"/>
                 </div>
                 </div>
                 <Botao nomeDoBotao="Entrar"/>

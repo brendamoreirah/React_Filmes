@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import Swal from "sweetalert2";
 
 import api from "../../Services/services";
 
@@ -28,8 +28,8 @@ const CadastroGenero = () => {
   }
 });
 Toast.fire({
-  icon: "success",
-  title: "Signed in successfully"
+  icon: icone,
+  title: mensagem
 });
   }
 

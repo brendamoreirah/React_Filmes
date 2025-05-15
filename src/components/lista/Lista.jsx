@@ -13,6 +13,7 @@ const Lista = (props) => {
                         {/* cabecalho da tabela, thead é a tag */}
                         <thead>
                             {/* tr => table row(tabela linha) */}
+                            
                             <tr className="table_cabecalho">
                                 <th>Nome</th>  
                                 <th style={{display: props.visible}}>Genero</th>
@@ -23,13 +24,19 @@ const Lista = (props) => {
                         {/* tbody => corpo da tabela */}
                         <tbody>
                             {/* tr é uma linha ta tabela */}
+                            {props.lista && props.lista.lenght > 0? (
                             <tr className="item_lista">
                                 <td data-cell= "Nome" style={{display: props.visible}}>Harry Potter</td>
                                 <td data-cell= "Genero"> Ação</td>
                                 <td data-cell= "Editar"><img src={Editar} alt="" /></td>
                                 <td data-cell= "Editar"><img src={Excluir} alt="" /></td>
                             </tr>
-                            
+
+                            )  : 
+                            (
+                                <p>Nenhum genero foi encontrado</p>
+                            )
+                            }
                         </tbody>
                     </table>
                 </div>

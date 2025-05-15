@@ -12,8 +12,10 @@ import Lista from "../../components/lista/Lista";
 
 const CadastroGenero = () => {
 
-  //nome do Genero
+  //nome do Genero, Estado
   const [genero, setGenero] = useState("");
+
+  const [listaGenero, setListaGenero] = useState([])
 
   function alerta(icone, mensagem){
     const Toast = Swal.mixin({
@@ -53,11 +55,37 @@ Toast.fire({
       alerta("error", "Erro! Preencha o campo")
     }
   }
+
+   async function listarGenero(){
+    try{
+    // Await -> Aguarde ter uma resposta da solicitacao
+      const resposta = await api.get("genero");
+      console.log(resposta);
+      setListaGenero(resposta);
+
+      setListaGenero(resposta.data);
+
+    }catch(error){
+      console.log(error);
+
+    }
+    
+  }
+
+
   //teste
   //useEffect(<fuction>, <dependency>)
   // useEffect(() => {
   //   console.log(genero)
   // }, [genero]);
+
+
+  //Assim que a pagina renderizar, o método listarGenero() será chamado
+useEffect(() => {
+ listarGenero();
+
+}, [])
+
 
   return (
     <>
@@ -81,6 +109,8 @@ Toast.fire({
         <Lista
           tituloLista="generos"
           visible="none"
+          //atribuir para lista, o meu estado atual:
+          lista = {listaGenero}
         />
       </main>
 

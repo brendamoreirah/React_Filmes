@@ -14,6 +14,7 @@ const CadastroFilme = () => {
     const [listaGenero, setListaGenero] = useState([]);
     const [genero, setGenero] = useState("");
     const [filme, setFilme] = useState ("");
+    const [listaFilme, setListaFilme] = useState([])
 
       function alertar(icone, mensagem) {
         const Toast = Swal.mixin({
@@ -40,6 +41,7 @@ const CadastroFilme = () => {
         try {
             const resposta = await api.get("genero");
             setListaGenero(resposta.data)
+            setListaFilme(resposta.data);
 
         } catch (error) {
             console.log(error)
@@ -67,10 +69,21 @@ const CadastroFilme = () => {
     }
 
 
+    async function listarFilme() {
+        try {
+            const resposta = await api.get("filme")
+            setListaFilme(resposta.data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
 
+
+//useEffect é quando a pagina for renderisada/atualizada irá aparecer as coisas novas
     useEffect(() => {
         listarGenero();
+        listarFilme();
     }, []);
 
 
@@ -94,6 +107,9 @@ const CadastroFilme = () => {
                 />
                 <Lista
                     tituloLista="Lista de Filmes"
+
+                    tipoLista="filme"
+                    lista = {listaFilme}
 
                 />
             </main>

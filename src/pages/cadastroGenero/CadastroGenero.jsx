@@ -175,10 +175,13 @@ const CadastroGenero = () => {
         <Lista
           tituloLista="generos"
           visible="none"
+          
           //atribuir para lista, o meu estado atual:
           lista={listaGenero}
           funcExcluir={deletarGenero}
           funcEditar={editarGenero}
+
+          tipoLista="genero"
         />
       </main>
 

@@ -30,9 +30,12 @@ const Lista = (props) => {
                     <tbody>
                         {listaPaginada && listaPaginada.length > 0 ? (
                             listaPaginada.map((item) => (
-                                <tr className="item_lista" key={item.idGenero}>
-                                    <td data-cell="Nome">{item.nome}</td>
-                                    <td data-cell="Genero" style={{ display: props.visible }}>Comedia</td>
+                                <tr className="item_lista" key={props.tipoLista == "genero" ? item.idGenero: item.idFilme}>
+                                    <td data-cell="Nome">
+                                        {props.tipoLista == "genero" ? item.nome : item.titulo}</td>
+
+                                    <td data-cell="Genero" style={{ display: props.visible }}>{item.genero?.nome}</td>
+
                                     <td data-cell="Editar">
                                         <button onClick={() => {props.funcEditar(item)}} className="btn-excluir">
                                             <img src={Editar} alt="Caneta" />
